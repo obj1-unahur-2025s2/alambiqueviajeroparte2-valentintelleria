@@ -60,5 +60,4 @@ test "luke viaja a hurlingham en el convertible convertido en chatarra" {
   luke.viajar(hurlingham)
   assert.equals("sticker de la Unahur",luke.recuerdo())
   assert.equals(5,chatarra.cañones())
-
   }

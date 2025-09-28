@@ -1,3 +1,6 @@
+import centroDeInscripcion.*
+
+
 object luke{
     var cantidadViajes = 0
     var recuerdo = null
@@ -27,6 +30,14 @@ object alambiqueVeloz {
     }
     method rapido() = rapido
     method patenteValida() = patente.head() == "A"
+
+    method inscribirseEnCarrera() {
+        centroDeInscripcion.inscribir(self)
+    }
+
+    method combustible() = combustible
+
+    method nivelDeVelocidad() = 100
 }
 
 object paris{
@@ -63,6 +74,13 @@ object antigualla {
     }
     method patenteValida() = chatarra.rapido() 
 
+    method inscribirseEnCarrera() {
+        centroDeInscripcion.inscribir(self)
+    }
+
+
+    method nivelDeVelocidad() = 90
+
 }
 object chatarra {
     var cañones = 10
@@ -77,6 +95,12 @@ object chatarra {
     method patenteValida() = municiones.take(4) == "ACME" 
     method cañones() = cañones
 
+    method inscribirseEnCarrera() {
+        centroDeInscripcion.inscribir(self)
+    }
+
+    method nivelDeVelocidad() = 60
+
 }
 
 object convertible{
@@ -89,7 +113,14 @@ object convertible{
     method convertir(vehiculo){
         convertido = vehiculo
     }
+
     method patenteValida() = convertido.patenteValida()
+
+    method inscribirseEnCarrera() {
+        centroDeInscripcion.inscribir(self)
+    }
+
+    method nivelDeVelocidad() = convertido.nivelDeVelocidad()
  
 }
 
@@ -105,4 +136,10 @@ object moto{
     method puedeFuncionar() = not moto.rapido()
     method desgaste() { }
     method patenteValida() = false
+
+    method inscribirseEnCarrera() {
+        centroDeInscripcion.inscribir(self)
+    }
+
+    method nivelDeVelocidad() = 40
 }
